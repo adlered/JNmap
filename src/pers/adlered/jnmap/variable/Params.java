@@ -14,5 +14,15 @@ public class Params {
     public static Locale locale;
     public static ResourceBundle resourceBundle;
 
+    public static String getLang(String key) {
+        return resourceBundle.getString(key);
+    }
+
+    /**
+     * Scan modes
+     * 1 - Alive scan
+     * 2 - Information scan
+     * 3 - Port scan
+     */
     public static int mode;
 }

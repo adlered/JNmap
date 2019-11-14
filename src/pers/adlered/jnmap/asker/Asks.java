@@ -11,10 +11,16 @@ import pers.adlered.jnmap.variable.Params;
  **/
 public class Asks {
     public static String language() {
-        return Ask.Ask("Choose a language:\n1) English (US)\n2) Chinese (Simplified)");
+        return Ask.ask("Choose a language:\n1) English (US)\n2) Chinese (Simplified)");
     }
 
     public static String mode() {
-        return Ask.Ask(Params.resourceBundle.getString("selectMode"));
+        return Ask.ask(Params.getLang("selectMode"));
+    }
+
+    public static class AliveMode {
+        public static String howTo() {
+            return Ask.ask(Params.getLang("aliveScan"));
+        }
     }
 }

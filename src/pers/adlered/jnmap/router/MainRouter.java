@@ -2,6 +2,7 @@ package pers.adlered.jnmap.router;
 
 import pers.adlered.jnmap.logger.Log;
 import pers.adlered.jnmap.logger.enumerate.Level;
+import pers.adlered.jnmap.router.mode.AfterModeRouter;
 import pers.adlered.jnmap.router.sub.LangRouter;
 import pers.adlered.jnmap.variable.DefaultConfig;
 
@@ -19,5 +20,7 @@ public class MainRouter {
         langRouter.route();
         ModeRouter modeRouter = new ModeRouter();
         modeRouter.route();
+        AfterModeRouter afterModeRouter = new AfterModeRouter();
+        afterModeRouter.route();
     }
 }

@@ -19,7 +19,7 @@ public class ModeRouter implements Router {
             try {
                 mode = Integer.parseInt(Asks.mode());
                 // If need add a mode, also put the number here
-                if (mode == 1 || mode == 2) {
+                if (mode == 1 || mode == 2 || mode == 3) {
                     Params.mode = mode;
                     break;
                 }

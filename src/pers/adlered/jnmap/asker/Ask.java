@@ -13,7 +13,7 @@ import java.util.Scanner;
  * @date : 2019-11-14 09:57
  **/
 public class Ask {
-    public static String Ask(String askWord) {
+    public static String ask(String askWord) {
         Log.log(Level.ASK, askWord);
         Scanner scanner = new Scanner(System.in);
         return scanner.nextLine();
