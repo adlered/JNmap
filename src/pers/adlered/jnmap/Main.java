@@ -3,9 +3,7 @@ package pers.adlered.jnmap;
 import pers.adlered.consoleargs.ConsoleArgs;
 import pers.adlered.jnmap.router.MainRouter;
 
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * <h3>JNmap</h3>
@@ -18,10 +16,10 @@ public class Main {
     public static void main(String[] args) {
         MainRouter mainRouter = new MainRouter();
         ConsoleArgs consoleArgs = new ConsoleArgs(args);
-
         Map<String, List<String>> storage = consoleArgs.getReturn();
 
-        Iterator<String> iterator = storage.keySet().iterator();
+
+        /* Iterator<String> iterator = storage.keySet().iterator();
         while (iterator.hasNext()) {
             String key = iterator.next();
             List<String> value = storage.get(key);
@@ -31,6 +29,6 @@ public class Main {
                 System.out.println(i);
             }
             System.out.println("-----");
-        }
+        } */
     }
 }

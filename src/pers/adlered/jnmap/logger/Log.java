@@ -16,4 +16,8 @@ public class Log {
     public static void log(Level level, Object log) {
         System.out.println("[" + new SimpleDateFormat("HH:mm:ss:SS").format(new Date()) + "] [" + level + "] " + log.toString());
     }
+
+    public static void logButNoNewLine(Level level, Object log) {
+        System.out.print("[" + new SimpleDateFormat("HH:mm:ss:SS").format(new Date()) + "] [" + level + "] " + log.toString());
+    }
 }
