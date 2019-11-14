@@ -17,5 +17,7 @@ public class MainRouter {
         Log.log(Level.INFO, "JNmap V" + DefaultConfig.version);
         LangRouter langRouter = new LangRouter();
         langRouter.route();
+        ModeRouter modeRouter = new ModeRouter();
+        modeRouter.route();
     }
 }

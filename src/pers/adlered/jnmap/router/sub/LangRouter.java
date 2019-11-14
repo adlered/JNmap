@@ -24,6 +24,9 @@ public class LangRouter implements Router {
             Params.locale = new Locale("en_US");
         } else if (lang.equals("2")) {
             Params.locale = new Locale("zh_CN");
+        } else {
+            Params.locale = new Locale("en_US");
         }
+        Params.resourceBundle = ResourceBundle.getBundle("lang.LangBundle", Params.locale);
     }
 }

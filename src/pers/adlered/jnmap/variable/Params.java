@@ -13,4 +13,6 @@ import java.util.ResourceBundle;
 public class Params {
     public static Locale locale;
     public static ResourceBundle resourceBundle;
+
+    public static int mode;
 }
