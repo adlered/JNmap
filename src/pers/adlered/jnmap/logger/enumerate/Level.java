@@ -1,5 +1,5 @@
 package pers.adlered.jnmap.logger.enumerate;
 
 public enum Level {
-    INFO, WARN, DEBUG, ASK
+    INFO, WARN, DEBUG, ASK, ERROR
 }
