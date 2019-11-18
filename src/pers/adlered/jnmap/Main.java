@@ -3,6 +3,7 @@ package pers.adlered.jnmap;
 import pers.adlered.consoleargs.ConsoleArgs;
 import pers.adlered.jnmap.router.MainRouter;
 
+import java.io.Console;
 import java.util.*;
 
 /**
@@ -15,9 +16,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) {
         MainRouter mainRouter = new MainRouter();
-        ConsoleArgs consoleArgs = new ConsoleArgs(args);
-        Map<String, List<String>> storage = consoleArgs.getReturn();
-
+        Map<String, List<String>> consoleArgs = ConsoleArgs.analyze(args);
 
         /* Iterator<String> iterator = storage.keySet().iterator();
         while (iterator.hasNext()) {

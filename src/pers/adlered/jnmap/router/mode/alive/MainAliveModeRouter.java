@@ -1,6 +1,8 @@
 package pers.adlered.jnmap.router.mode.alive;
 
 import pers.adlered.jnmap.asker.Asks;
+import pers.adlered.jnmap.router.mode.alive.way.MultipleAliveModeRouter;
+import pers.adlered.jnmap.router.mode.alive.way.SingleAliveModeRouter;
 import pers.adlered.jnmap.router.sub.intface.Router;
 
 /**
@@ -13,7 +15,17 @@ import pers.adlered.jnmap.router.sub.intface.Router;
 public class MainAliveModeRouter implements Router {
     @Override
     public void route() {
-        String howTo = Asks.AliveMode.howTo();
-        System.out.println(howTo);
+        while (true) {
+            String howTo = Asks.AliveMode.howTo();
+            if (howTo.equals("1")) {
+                SingleAliveModeRouter singleAliveModeRouter = new SingleAliveModeRouter();
+                singleAliveModeRouter.route();
+                break;
+            } else if (howTo.equals("2")) {
+                MultipleAliveModeRouter multipleAliveModeRouter = new MultipleAliveModeRouter();
+                multipleAliveModeRouter.route();
+                break;
+            }
+        }
     }
 }

@@ -1,18 +1,44 @@
 package pers.adlered.consoleargs;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 /**
  * <h3>ConsoleArgs</h3>
- * <p>Args analyze</p>
+ * <p>将用户在控制台传入的参数分解为键&值</p>
+ *
+ * <h3>用法：</h3>
+ * <h4>将控制台参数解析：</h4>
+ * <pre>
+ * public static void main(String[] args) {
+ *     Map<String, List<String>> map = ConsoleArgs.analyze(args);
+ *     for (Map.Entry<String, List<String>> listEntry : map.entrySet()) {
+ *         System.out.println("键：" + listEntry.getKey());
+ *         System.out.println("值：");
+ *         for (String value : listEntry.getValue()) {
+ *             System.out.println(value);
+ *         }
+ *     }
+ * }
+ * </pre>
+ *
+ * <h4>你也可以直接定义一个数组被解析：</h4>
+ * <pre>
+ * String[] param = new String[] {
+ *         "-p", "7426", "--ip=127.0.0.1"
+ * };
+ * Map<String, List<String>> map = ConsoleArgs.analyze(param);
+ * </pre>
  *
  * @author : https://github.com/AdlerED
- * @date : 2019-11-13 15:42
+ * @date : 2019-11-17 00:41
  **/
 public class ConsoleArgs {
-    private Map<String, List<String>> storage = new HashMap<>();
+    private static Map<String, List<String>> storage = new HashMap<>();
 
-    public ConsoleArgs(String[] args) {
+    public static Map<String, List<String>> analyze(String[] args) {
         String tempVar = "";
         String tempVal = "";
         for (int i = 0; i < args.length; i++) {
@@ -63,14 +89,15 @@ public class ConsoleArgs {
                 }
             }
         }
-        List<String> values = new ArrayList<>();
-        for (String j : tempVal.split("\n")) {
-            values.add(j);
+        // 确保最后一个参数被保存
+        if (!tempVar.isEmpty()) {
+            // 如果键不为空，保存
+            List<String> values = new ArrayList<>();
+            for (String j : tempVal.split("\n")) {
+                values.add(j);
+            }
+            storage.put(tempVar, values);
         }
-        storage.put(tempVar, values);
-    }
-
-    public Map<String, List<String>> getReturn() {
         return storage;
     }
 }
